@@ -117,7 +117,11 @@ local plugins = {
         require('telescope').extensions.git_worktree.create_git_worktree()
       end)
     end,
+  },{
+    "tpope/vim-fugitive",
+    lazy = false,
   }
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
