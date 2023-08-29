@@ -26,7 +26,13 @@ M.general = {
         -- let g:copilot_no_tab_map = v:true
 
 -- more keybinds!
+
+-- Move line in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+  
+-- Center screen after jumping with C-d/C-u
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 return M
