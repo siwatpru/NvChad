@@ -73,14 +73,7 @@ local plugins = {
   {
     "christoomey/vim-tmux-navigator",
     lazy = false
-  },
-  {
-    "kdheepak/lazygit.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    lazy = false
-  },
+  }
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
