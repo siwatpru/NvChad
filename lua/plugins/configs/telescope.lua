@@ -1,4 +1,9 @@
 local options = {
+  pickers = {
+    oldfiles = {
+      cwd_only = true,
+    }
+  },
   defaults = {
     vimgrep_arguments = {
       "rg",
