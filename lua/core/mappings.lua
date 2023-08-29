@@ -9,10 +9,10 @@ M.general = {
     ["<C-e>"] = { "<End>", "End of line" },
 
     -- navigate within insert mode
-    -- ["<C-h>"] = { "<Left>", "Move left" },
-    -- ["<C-l>"] = { "<Right>", "Move right" },
-    -- ["<C-j>"] = { "<Down>", "Move down" },
-    -- ["<C-k>"] = { "<Up>", "Move up" },
+    ["<C-h>"] = { "<Left>", "Move left" },
+    ["<C-l>"] = { "<Right>", "Move right" },
+    ["<C-j>"] = { "<Down>", "Move down" },
+    ["<C-k>"] = { "<Up>", "Move up" },
   },
 
   n = {
@@ -332,7 +332,7 @@ M.nvterm = {
     },
 
     -- new
-    ["<leader>h"] = {
+    ["<leader>tt"] = {
       function()
         require("nvterm.terminal").new "horizontal"
       end,
@@ -366,6 +366,41 @@ M.whichkey = {
       "Which-key query lookup",
     },
   },
+}
+
+-- local mark = require("harpoon.mark")
+-- local ui = require("harpoon.ui")
+--
+-- vim.keymap.set("n", "<leader>a", mark.add_file)
+-- vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
+--
+-- vim.keymap.set("n", "<C-h>", function() ui.nav_file(1) end)
+-- vim.keymap.set("n", "<C-t>", function() ui.nav_file(2) end)
+-- vim.keymap.set("n", "<C-n>", function() ui.nav_file(3) end)
+-- vim.keymap.set("n", "<C-s>", function() ui.nav_file(4) end)
+M.harpoon = {
+  plugin = true,
+
+  n = {
+    ["<leader>a"] = {
+      function()
+        require("harpoon:mark").add_file()
+      end,
+      "Harpoon Mark file",
+    },
+    ["<C-e>"] = {
+      function()
+        require("harpoon:ui").toggle_quick_menu()
+      end,
+      "Harpoon Quick Menu",
+    },
+    ["<C-h>"] = {
+      function()
+        require("harpoon:ui").nav_file(1)
+      end,
+      "Harpoon Mark file",
+    },
+  }
 }
 
 M.blankline = {
