@@ -7,7 +7,7 @@ local plugins = {
 
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
+   dependencies = {
       -- format & linting
       {
         "jose-elias-alvarez/null-ls.nvim",
@@ -70,10 +70,12 @@ local plugins = {
     config = true,
     lazy = false
   },
+
   {
     "christoomey/vim-tmux-navigator",
     lazy = false
   },
+
   {
     "ThePrimeagen/harpoon",
     dependencies = {
@@ -87,13 +89,14 @@ local plugins = {
       local ui = require("harpoon.ui")
 
       vim.keymap.set("n", "<leader>a", mark.add_file)
-      vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
+      vim.keymap.set("n", "<leader>e", ui.toggle_quick_menu)
       vim.keymap.set("n", "<leader>h", function() ui.nav_file(1) end)
       vim.keymap.set("n", "<leader>j", function() ui.nav_file(2) end)
       vim.keymap.set("n", "<leader>k", function() ui.nav_file(3) end)
       vim.keymap.set("n", "<leader>l", function() ui.nav_file(4) end)
     end,
   },
+
   {
     "siwatpru/git-worktree.nvim",
     lazy = false,
@@ -117,10 +120,40 @@ local plugins = {
         require('telescope').extensions.git_worktree.create_git_worktree()
       end)
     end,
-  },{
+  },
+
+  {
     "tpope/vim-fugitive",
     lazy = false,
-  }
+  },
+
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+  },
+
+  {
+    "ggandor/leap.nvim",
+    lazy = false,
+    config = function ()
+      require('leap').add_default_mappings()
+    end
+  },
+
+  {
+    "folke/neodev.nvim",
+  },
+
+  {
+    "Bekaboo/dropbar.nvim",
+    lazy = false,
+  },
 
   -- To make a plugin not be loaded
   -- {

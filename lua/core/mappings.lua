@@ -105,21 +105,21 @@ M.comment = {
   plugin = true,
 
   -- toggle comment in both modes
-  n = {
-    ["<leader>/"] = {
-      function()
-        require("Comment.api").toggle.linewise.current()
-      end,
-      "Toggle comment",
-    },
-  },
-
-  v = {
-    ["<leader>/"] = {
-      "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
-      "Toggle comment",
-    },
-  },
+  -- n = {
+  --   ["<leader>/"] = {
+  --     function()
+  --       require("Comment.api").toggle.linewise.current()
+  --     end,
+  --     "Toggle comment",
+  --   },
+  -- },
+  --
+  -- v = {
+  --   ["<leader>/"] = {
+  --     "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+  --     "Toggle comment",
+  --   },
+  -- },
 }
 
 M.lspconfig = {
@@ -189,6 +189,7 @@ M.lspconfig = {
         require('telescope.builtin').lsp_references()
       end,
       "LSP references",
+      opts = { silent = true, noremap = true },
     },
 
     ["<leader>f"] = {
@@ -250,7 +251,7 @@ M.nvimtree = {
     ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
 
     -- focus
-    ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
+    -- ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
   },
 }
 
@@ -265,8 +266,8 @@ M.telescope = {
     ["<leader>,"] = { "<cmd> Telescope buffers <CR>", "Find buffers" },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "Help page" },
     ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "Find oldfiles" },
-    ["<leader>fz"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
-
+    ["<leader>/"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
+--
     -- git
     ["<leader>cm"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
     ["<leader>gt"] = { "<cmd> Telescope git_status <CR>", "Git status" },
