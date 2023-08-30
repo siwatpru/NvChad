@@ -5,6 +5,7 @@ M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>gg"] = { "<cmd> Neogit <CR>", "Neogit" },
+    ["<leader>ll"] = { "<cmd> Lazy <CR>", "Lazy" },
 
     ["<C-h>"] = { "<cmd>TmuxNavigateLeft<CR>", "window left" },
     ["<C-l>"] = { "<cmd>TmuxNavigateRight<CR>", "window right" },
