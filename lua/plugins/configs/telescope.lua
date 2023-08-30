@@ -1,5 +1,8 @@
 local options = {
   pickers = {
+    find_files = {
+      hidden = true,
+    },
     oldfiles = {
       cwd_only = true,
     }
