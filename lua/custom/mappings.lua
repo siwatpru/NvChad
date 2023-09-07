@@ -17,6 +17,19 @@ M.general = {
       function()
         require("neotest").summary.toggle()
       end,
+      'Toggle Neotest sidebar'
+    },
+    ["<leader>of"] = {
+      function()
+        require("neotest").run.run(vim.fn.expand("%"))
+      end,
+      'Run test on current file'
+    },
+    ["<leader>or"] = {
+      function()
+        require("neotest").run.run()
+      end,
+      'Run nearest test'
     },
   },
   i = {
