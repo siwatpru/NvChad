@@ -5,7 +5,6 @@ M.general = {
   n = {
     -- [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>gg"] = { "<cmd> Neogit <CR>", "Neogit" },
-    ["<leader>ll"] = { "<cmd> Lazy <CR>", "Lazy" },
 
     ["<C-h>"] = { "<cmd>TmuxNavigateLeft<CR>", "window left" },
     ["<C-l>"] = { "<cmd>TmuxNavigateRight<CR>", "window right" },
@@ -30,6 +29,10 @@ M.general = {
         require("neotest").run.run()
       end,
       'Run nearest test'
+    },
+    ["<leader>tr"] = {
+      "<cmd>TodoTelescope<cr>",
+      'Open TODO list in telescope'
     },
   },
   i = {

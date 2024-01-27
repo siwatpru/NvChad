@@ -66,6 +66,7 @@ local plugins = {
       "nvim-lua/plenary.nvim", -- required
       "nvim-telescope/telescope.nvim", -- optional
       "sindrets/diffview.nvim", -- optional
+      "ibhagwan/fzf-lua", -- optional
     },
     config = true,
     lazy = false,
@@ -185,7 +186,7 @@ local plugins = {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     lazy = false,
-    opts = {
+    pts = {
       -- your configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
@@ -226,6 +227,18 @@ local plugins = {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
+    config = function() end,
+  },
+
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    lazy = false,
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
   },
 
   {
@@ -261,6 +274,12 @@ local plugins = {
       require("telescope").load_extension "ui-select"
     end,
   },
+
+  -- {
+  --   "folke/flash.nvim",
+  --   event = "VeryLazy",
+  --   opts = {},
+  -- },
 
   -- To make a plugin not be loaded
   -- {

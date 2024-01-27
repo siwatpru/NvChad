@@ -156,7 +156,7 @@ M.lspconfig = {
       "LSP implementation",
     },
 
-    ["<leader>ls"] = {
+    ["<leader>cs"] = {
       function()
         vim.lsp.buf.signature_help()
       end,

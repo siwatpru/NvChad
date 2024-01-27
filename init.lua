@@ -20,3 +20,7 @@ dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
 require "plugins"
 vim.cmd.colorscheme "catppuccin"
+
+-- Transparent backgrounds
+vim.cmd "hi Normal ctermbg=NONE guibg=NONE"
+vim.cmd "hi NvimTreeNormal guibg=NONE ctermbg=NONE"
